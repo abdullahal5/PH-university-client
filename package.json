@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "start": "yarn dev",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.7",
     "@reduxjs/toolkit": "^2.2.6",
     "antd": "^5.19.0",
     "react": "^18.3.1",
