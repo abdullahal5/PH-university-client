@@ -19,11 +19,11 @@ export type TMeta = {
 export type TResponse<T> = {
   data: {
     result?: T;
-    error?: TError;
     meta?: TMeta;
     success: boolean;
     message: string;
   };
+  error?: TError;
 };
 
 export type TQueryParam = {

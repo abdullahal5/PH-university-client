@@ -47,7 +47,7 @@ const Sidebar = () => {
           alignItems: "center",
         }}
       >
-        <h1>PH Uni</h1>
+        <h1 className="text-2xl font-semibold">PH University</h1>
       </div>
       <Menu
         theme="dark"

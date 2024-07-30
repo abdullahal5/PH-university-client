@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import PHForm from "../components/form/PHForm";
 import PHInput from "../components/form/PHInput";
+import Title from "../components/ui/Title";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ const Login = () => {
        navigate(`/${user.role}/dashboard`);
      }
    } catch (error) {
-     toast.error(error?.data?.message || "An error occurred", {
+     toast.error(error?.status || "An error occurred", {
        id: toastId,
        duration: 2000,
      });
@@ -56,6 +57,7 @@ const Login = () => {
   return (
     <Row justify="center" align="middle" className="h-[100vh]">
       <PHForm onSubmit={onSubmit} defaultValues={defaultValues}>
+      <Title title={"Login"} />
         <PHInput type="text" name="id" label="ID:" />
         <PHInput type="text" name="password" label="Password:" />
         <Button htmlType="submit">Login</Button>

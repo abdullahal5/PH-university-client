@@ -3,6 +3,7 @@ import { useGetAllSemestersQuery } from "../../../redux/features/admin/academicM
 import { TAcademicSemester } from "../../../types/academicManagemnt.type";
 import { useState } from "react";
 import { TQueryParam } from "../../../constants/global";
+import Title from "../../../components/ui/Title";
 
 export type TTableData = Pick<
   TAcademicSemester,
@@ -108,6 +109,7 @@ const AcademicSemester = () => {
 
   return (
     <div>
+      <Title title="Academic Semester" />
       <Table
         loading={isFetching}
         columns={columns}

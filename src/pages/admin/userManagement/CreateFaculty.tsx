@@ -1,7 +1,9 @@
+import Title from "../../../components/ui/Title";
+
 const CreateFaculty = () => {
   return (
     <div>
-      Create Faculty
+      <Title title="Create Faculty" />
     </div>
   );
 };
