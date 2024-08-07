@@ -18,6 +18,7 @@ export type TMeta = {
 
 export type TResponse<T> = {
   data: {
+    data: any;
     result?: T;
     meta?: TMeta;
     success: boolean;
@@ -32,3 +33,22 @@ export type TQueryParam = {
 };
 
 export type TResponseRedux<T> = TResponse<T> & BaseQueryApi;
+
+export const bloodGroupOptions = [
+  "A+",
+  "A-",
+  "B+",
+  "B-",
+  "AB+",
+  "AB-",
+  "O+",
+  "O-",
+].map((group) => ({
+  value: group,
+  label: group,
+}));
+
+export const genderOptions = ["male", "female", "others"].map((gender) => ({
+  value: gender,
+  label: gender.charAt(0).toUpperCase() + gender.slice(1),
+}));

@@ -1,27 +1,26 @@
-import { Form, Input } from "antd";
+import { DatePicker, Form } from "antd";
+import moment from "moment";
 import { Controller } from "react-hook-form";
 
-type TInputProps = {
-  type: string;
+type TInputDatePickerProps = {
   name: string;
   label?: string;
-  defaultValue?: string | number;
+  defaultValue?: string | number | undefined;
 };
 
-const PHInput = ({ type, name, label, defaultValue }: TInputProps) => {
+const PHDatePicker = ({ name, label, defaultValue }: TInputDatePickerProps) => {
   return (
     <div style={{ marginBottom: "20px" }}>
       <Controller
         name={name}
         render={({ field, fieldState: { error } }) => (
           <Form.Item label={label}>
-            <Input
+            <DatePicker
               size="large"
               {...field}
-              className="border"
-              type={type}
               id={name}
-              defaultValue={defaultValue}
+              style={{ width: "100%" }}
+              defaultValue={moment(defaultValue)}
             />
             {error && (
               <small className="text-center text-red-500 font-semibold pt-0.5">
@@ -35,4 +34,4 @@ const PHInput = ({ type, name, label, defaultValue }: TInputProps) => {
   );
 };
 
-export default PHInput;
+export default PHDatePicker;
