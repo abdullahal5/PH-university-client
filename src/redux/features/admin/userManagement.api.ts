@@ -5,9 +5,12 @@ import { baseApi } from "../../api/baseApi";
 const userManagementApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     getSingleStudent: builder.query({
-      query: (id) => ({
-        url: `/students/${id}`,
-      }),
+      query: (id) => {
+        return {
+          url: `/students/${id}`,
+          method: "GET"
+        };
+      }
     }),
     getAllStudents: builder.query({
       query: (args) => {
@@ -97,11 +100,11 @@ const userManagementApi = baseApi.injectEndpoints({
 });
 
 export const {
+  useGetSingleStudentQuery,
   useAddStudentMutation,
   useGetAllStudentsQuery,
-  useGetSingleStudentQuery,
   useAddAdminMutation,
   useGetAllAdminQuery,
   useAddFacultyMutation,
-  useGetAllFacultyQuery
+  useGetAllFacultyQuery,
 } = userManagementApi;

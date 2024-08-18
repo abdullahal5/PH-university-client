@@ -9,10 +9,10 @@ import CreateAcademicSemester from "../pages/admin/academicManagement/CreateAcad
 import CreateStudent from "../pages/admin/userManagement/CreateStudent";
 import AcademicFaculty from "../pages/admin/academicManagement/AcademicFaculty";
 import StudentData from "../pages/admin/userManagement/StudentData";
-import StudentDetails from "../pages/admin/userManagement/StudentDetails";
 import StudentUpdate from "../pages/admin/userManagement/StudentUpdate";
 import AdminData from "../pages/admin/userManagement/AdminData";
 import FacultyData from "../pages/admin/userManagement/FacultyData";
+import UserDetails from "../pages/admin/userManagement/UserDetails";
 
 export const adminPaths = [
   {
@@ -80,10 +80,10 @@ export const adminPaths = [
       },
       {
         path: "students-data/:studentId",
-        element: <StudentDetails />,
+        element: <UserDetails />,
       },
       {
-        path: "students-data-update/:studentId",
+        path: "user-data-update/:studentId",
         element: <StudentUpdate />,
       },
       {

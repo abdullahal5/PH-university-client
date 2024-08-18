@@ -105,7 +105,7 @@ const StudentUpdate = () => {
                   <PHDatePicker
                     name="dateOfBirth"
                     label="Date of Birth"
-                    defaultValue={studentData.dateOfBirth}
+                    defaultValue={studentData?.dateOfBirth}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -113,7 +113,7 @@ const StudentUpdate = () => {
                     name="bloodGroup"
                     label="Blood Group"
                     options={bloodGroupOptions}
-                    defaultValue={studentData.bloodGroup}
+                    defaultValue={studentData?.bloodGroup}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -160,7 +160,7 @@ const StudentUpdate = () => {
                     type="email"
                     name="email"
                     label="Email"
-                    defaultValue={studentData.email}
+                    defaultValue={studentData?.email}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -168,7 +168,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="contactNo"
                     label="Contact Number"
-                    defaultValue={studentData.contactNo}
+                    defaultValue={studentData?.contactNo}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -176,7 +176,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="emergencyContactNo"
                     label="Emergency Contact Number"
-                    defaultValue={studentData.emergencyContactNo}
+                    defaultValue={studentData?.emergencyContactNo}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -184,7 +184,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="presentAddress"
                     label="Present Address"
-                    defaultValue={studentData.presentAddress}
+                    defaultValue={studentData?.presentAddress}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -192,7 +192,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="permanentAddress"
                     label="Permanent Address"
-                    defaultValue={studentData.permanentAddress}
+                    defaultValue={studentData?.permanentAddress}
                   />
                 </Col>
                 <Divider style={{ padding: 5 }}>Guardian Info</Divider>
@@ -201,7 +201,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="guardian.fatherName"
                     label="Father Name"
-                    defaultValue={studentData.guardian.fatherName}
+                    defaultValue={studentData?.guardian?.fatherName}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -209,7 +209,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="guardian.fatherOccupation"
                     label="Father Occupation"
-                    defaultValue={studentData.guardian.fatherOccupation}
+                    defaultValue={studentData?.guardian?.fatherOccupation}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -217,7 +217,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="guardian.fatherContactNo"
                     label="Father ContactNo."
-                    defaultValue={studentData.guardian.fatherContactNo}
+                    defaultValue={studentData?.guardian?.fatherContactNo}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -225,7 +225,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="guardian.motherName"
                     label="Mother Name"
-                    defaultValue={studentData.guardian.motherName}
+                    defaultValue={studentData?.guardian?.motherName}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -233,7 +233,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="guardian.motherOccupation"
                     label="Mother Occupation"
-                    defaultValue={studentData.guardian.motherOccupation}
+                    defaultValue={studentData?.guardian?.motherOccupation}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -241,7 +241,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="guardian.motherContactNo"
                     label="Mother ContactNo."
-                    defaultValue={studentData.guardian.motherContactNo}
+                    defaultValue={studentData?.guardian?.motherContactNo}
                   />
                 </Col>
                 <Divider style={{ padding: 5 }}>Local Guardian Info</Divider>
@@ -250,7 +250,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="localGuardian.name"
                     label="Name"
-                    defaultValue={studentData.localGuardian.name}
+                    defaultValue={studentData?.localGuardian?.name}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -258,7 +258,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="localGuardian.occupation"
                     label="Occupation"
-                    defaultValue={studentData.localGuardian.occupation}
+                    defaultValue={studentData?.localGuardian?.occupation}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -266,7 +266,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="localGuardian.contactNo"
                     label="Contact Number"
-                    defaultValue={studentData.localGuardian.contactNo}
+                    defaultValue={studentData?.localGuardian?.contactNo}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -274,7 +274,7 @@ const StudentUpdate = () => {
                     type="text"
                     name="localGuardian.address"
                     label="Address"
-                    defaultValue={studentData.localGuardian.address}
+                    defaultValue={studentData?.localGuardian?.address}
                   />
                 </Col>
                 <Divider style={{ padding: 5 }}>Academic info</Divider>
@@ -284,7 +284,7 @@ const StudentUpdate = () => {
                     label="Admission Semester"
                     disabled={sIsLoading}
                     options={semesterOptions}
-                    defaultValue={`${studentData.admissionSemester.name} . ${studentData.admissionSemester.year}`}
+                    defaultValue={`${studentData?.admissionSemester?.name} . ${studentData?.admissionSemester?.year}`}
                   />
                 </Col>
                 <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -293,7 +293,7 @@ const StudentUpdate = () => {
                     label="Academic Department"
                     options={departmentOptions}
                     disabled={dIsLoading}
-                    defaultValue={studentData.academicDepartment.name}
+                    defaultValue={studentData?.academicDepartment?.name}
                   />
                 </Col>
               </Row>

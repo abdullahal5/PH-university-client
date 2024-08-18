@@ -67,7 +67,7 @@ const FacultyData = () => {
       render: (item) => {
         return (
           <Space>
-            <Link to={`/admin/students-data-update/${item.key}`}>
+            <Link to={`/admin/user-data-update/${item.key}`}>
               <Button>Update</Button>
             </Link>
             <Link to={`/admin/students-data/${item.key}`}>
