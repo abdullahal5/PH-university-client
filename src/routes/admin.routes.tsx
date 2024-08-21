@@ -1,18 +1,24 @@
-import AdminDashboard from "../pages/admin/AdminDashboard";
 import CreateAdmin from "../pages/admin/userManagement/CreateAdmin";
 import CreateFaculty from "../pages/admin/userManagement/CreateFaculty";
-import AcademicDepartment from "../pages/admin/academicManagement/AcademicDepartment";
-import AcademicSemester from "../pages/admin/academicManagement/AcademicSemester";
-import CreateAcademicDepartment from "../pages/admin/academicManagement/CreateAcademicDepartment";
-import CreateAcademicFaculty from "../pages/admin/academicManagement/CreateAcademicFaculty";
-import CreateAcademicSemester from "../pages/admin/academicManagement/CreateAcademicSemester";
-import CreateStudent from "../pages/admin/userManagement/CreateStudent";
-import AcademicFaculty from "../pages/admin/academicManagement/AcademicFaculty";
 import StudentData from "../pages/admin/userManagement/StudentData";
 import StudentUpdate from "../pages/admin/userManagement/StudentUpdate";
 import AdminData from "../pages/admin/userManagement/AdminData";
 import FacultyData from "../pages/admin/userManagement/FacultyData";
 import UserDetails from "../pages/admin/userManagement/UserDetails";
+import CreateStudent from "../pages/admin/userManagement/CreateStudent";
+import AdminDashboard from "../pages/admin/AdminDashboard";
+import AcademicDepartment from "../pages/admin/academicManagement/AcademicDepartment";
+import AcademicSemester from "../pages/admin/academicManagement/AcademicSemester";
+import CreateAcademicDepartment from "../pages/admin/academicManagement/CreateAcademicDepartment";
+import CreateAcademicFaculty from "../pages/admin/academicManagement/CreateAcademicFaculty";
+import CreateAcademicSemester from "../pages/admin/academicManagement/CreateAcademicSemester";
+import AcademicFaculty from "../pages/admin/academicManagement/AcademicFaculty";
+import SemesterRegistration from "../pages/admin/courseManagement/SemesterRegistration";
+import RegisteredSemesters from "../pages/admin/courseManagement/RegisteredSemesters";
+import Courses from "../pages/admin/courseManagement/Courses";
+import CreateCourse from "../pages/admin/courseManagement/CreateCourse";
+import OfferCourse from "../pages/admin/courseManagement/OfferCourse";
+import OfferedCourses from "../pages/admin/courseManagement/OfferedCourses";
 
 export const adminPaths = [
   {
@@ -95,6 +101,41 @@ export const adminPaths = [
         name: "Faculty",
         path: "faculty-data",
         element: <FacultyData />,
+      },
+    ],
+  },
+  {
+    name: "Course Management",
+    children: [
+      {
+        name: "Semester Registration",
+        path: "semester-registration",
+        element: <SemesterRegistration />,
+      },
+      {
+        name: "Registered Semesters",
+        path: "registered-semesters",
+        element: <RegisteredSemesters />,
+      },
+      {
+        name: "Create Course",
+        path: "create-course",
+        element: <CreateCourse />,
+      },
+      {
+        name: "Courses",
+        path: "courses",
+        element: <Courses />,
+      },
+      {
+        name: "Offer Course",
+        path: "offer-course",
+        element: <OfferCourse />,
+      },
+      {
+        name: "Offered Courses",
+        path: "offered-courses",
+        element: <OfferedCourses />,
       },
     ],
   },

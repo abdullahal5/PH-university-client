@@ -52,3 +52,10 @@ export const genderOptions = ["male", "female", "others"].map((gender) => ({
   value: gender,
   label: gender.charAt(0).toUpperCase() + gender.slice(1),
 }));
+
+const weekdays = ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+
+export const weekDaysOptions = weekdays.map((item) => ({
+  value: item,
+  label: item,
+}));
