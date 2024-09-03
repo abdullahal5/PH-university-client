@@ -83,7 +83,7 @@ const OfferCourse = () => {
 
   return (
     <Flex justify="center" align="center">
-      <Col span={6}>
+      <Col span={6}>da
         <PHForm onSubmit={onSubmit}>
           <PHSelect
             name="semesterRegistration"

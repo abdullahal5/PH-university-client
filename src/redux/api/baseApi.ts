@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   BaseQueryApi,
   BaseQueryFn,
@@ -58,6 +59,6 @@ const BaseQueryWithRefreshToken: BaseQueryFn<
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: BaseQueryWithRefreshToken,
-  tagTypes: ["semester", "courses"],
+  tagTypes: ["semester", "courses", "offeredCourse", ],
   endpoints: () => ({}),
 });

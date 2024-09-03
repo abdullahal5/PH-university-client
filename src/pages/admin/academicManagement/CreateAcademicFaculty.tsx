@@ -9,15 +9,7 @@ import { useAddAcademicFacultyMutation } from "../../../redux/features/admin/aca
 import { toast } from "sonner";
 import { TResponse } from "../../../constants/global";
 import Title from "../../../components/ui/Title";
-
-const subjectNameOptions = [
-  "Computer Engineering",
-  "Electrical Engineering",
-  "Civil Engineering",
-].map((subject) => ({
-  value: subject,
-  label: subject,
-}));
+import PHInput from "../../../components/form/PHInput";
 
 const CreateAcademicFaculty = () => {
   const [addAcademicFaculty] = useAddAcademicFacultyMutation();
@@ -54,7 +46,7 @@ const CreateAcademicFaculty = () => {
             onSubmit={onSubmit}
             resolver={zodResolver(academicFacultySchema)}
           >
-            <PHSelect label="Name" name="name" options={subjectNameOptions} />
+            <PHInput type="text" label="Name" name="name" />
             <Button htmlType="submit">Submit</Button>
           </PHForm>
         </Col>

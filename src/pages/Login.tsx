@@ -14,50 +14,53 @@ const Login = () => {
   const navigate = useNavigate();
 
   const defaultValues = {
-    id: "A-0001",
-    password: "admin123",
+    id: "2025020001",
+    password: "student123",
   };
   const dispatch = useAppDispatch();
   const [login] = useLoginMutation();
 
- const onSubmit = async (data: FieldValues) => {
-   const toastId = toast.loading("logging in");
+  const onSubmit = async (data: FieldValues) => {
+    const toastId = toast.loading("logging in");
 
-   try {
-     const userInfo = {
-       id: data.id,
-       password: data.password,
-     };
-     const res = (await login(userInfo).unwrap());
-     
-     if (res.success === true) {
-       const user = verifyToken(res.data.accessToken) as TUser;
-       dispatch(
-         setUser({
-           user: user,
-           token: res.data.accessToken,
-         })
-       );
-       toast.success("logged in", { id: toastId, duration: 2000 });
-       navigate(`/${user.role}/dashboard`);
-     }
-   } catch (error) {
-     toast.error(error?.status || "An error occurred", {
-       id: toastId,
-       duration: 2000,
-     });
-   } finally {
-     setTimeout(() => {
-       toast.dismiss(toastId);
-     }, 2000);
-   }
- };
+    try {
+      const userInfo = {
+        id: data.id,
+        password: data.password,
+      };
+      const res = await login(userInfo).unwrap();
 
+      if (res.success === true) {
+        const user = verifyToken(res.data.accessToken) as TUser;
+        dispatch(
+          setUser({
+            user: user,
+            token: res.data.accessToken,
+          })
+        );
+        toast.success("logged in", { id: toastId, duration: 2000 });
+        if (res.data.needsPasswordChange) {
+          navigate("/change-password");
+        } else {
+          navigate(`/${user.role}/dashboard`);
+        }
+      }
+    } catch (error) {
+      toast.error(error?.status || "An error occurred", {
+        id: toastId,
+        duration: 2000,
+      });
+    } finally {
+      setTimeout(() => {
+        toast.dismiss(toastId);
+      }, 2000);
+    }
+  };
 
   return (
     <Row justify="center" align="middle" className="h-[100vh]">
       <PHForm onSubmit={onSubmit} defaultValues={defaultValues}>
-      <Title title={"Login"} />
+        <Title title={"Login"} />
         <PHInput type="text" name="id" label="ID:" />
         <PHInput type="text" name="password" label="Password:" />
         <Button htmlType="submit">Login</Button>
